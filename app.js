@@ -8,6 +8,7 @@ function onLoginSubmit(event) {         // js는 첫 매개볁수는 이벤트 �
     event.preventDefault();             // 브라우저가 기본 동작을 실행하지 못하게 막기
     login.classList.add(HIDDEN_CLASSNAME);
     const userName = loginInput.value;
+    localStorage.setItem("username", userName);
     loginName.innerText = `hello ${userName}`;
     loginName.classList.remove(HIDDEN_CLASSNAME);
 }
