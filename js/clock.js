@@ -1,8 +1,12 @@
 const clock = document.querySelector("h2#clock")
 
 function setClock(){
-    const data = new Date();
-    clock.innerText = `${data.getFullYear()} / ${data.getMonth() + 1} / ${data.getDate()} ${data.getHours()}:${data.getMinutes()}`
+    const date = new Date();
+    const hours = date.getHours().toString().padStart(2, "0");
+    const minutes = date.getMinutes().toString().padStart(2, "0");
+    const seconds = String(date.getSeconds()).padStart(2, "0");
+
+    clock.innerText = `${date.getFullYear()} / ${date.getMonth() + 1} / ${date.getDate()} ${hours}:${minutes}:${seconds}`
 }
 
 setClock()
