@@ -1,8 +1,9 @@
 .hidden {
     display: none;
 }
-<!-- img를 배경화면으로 설정하는 css
+
 img {       
+    /*img를 배경화면으로 사용하는 css */
     position:absolute;
     width:100%;
     height:100%;
