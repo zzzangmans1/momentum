@@ -2,6 +2,11 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 
+const toDos = [] ;
+
+function saveToDo() {
+    localStorage.setItem("todos", JSON.stringify(toDos));
+}
 function deleteToDo(event) {
     const li = event.target.parentElement
     li.remove();
@@ -24,7 +29,10 @@ function handleToDoSubmit(evnet){
     evnet.preventDefault();
     const newToDo = toDoInput.value
     toDoInput.value = "";
+    toDos.push(newToDo);
+    console.log(newToDo);
     paintToDo(newToDo);
+    saveToDo();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
